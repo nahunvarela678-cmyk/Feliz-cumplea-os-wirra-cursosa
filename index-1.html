@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff77a8">
+  <title>¡Feliz cumpleaños, Wuirra Cursosa! 💗</title>
+  <style>
+    :root {
+      --pink: #ff75a7;
+      --deep-pink: #e83e82;
+      --cream: #fff8fc;
+      --purple: #9b70c9;
+      --ink: #57344d;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, #ffe0ee 0, transparent 30%),
+        radial-gradient(circle at 90% 25%, #eadcff 0, transparent 32%),
+        linear-gradient(135deg, #fff8fc, #fff0f7 55%, #f8efff);
+    }
+    .hearts { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      color: rgba(232, 62, 130, .35);
+      animation: floatUp linear infinite;
+      user-select: none;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(0) rotate(0deg); opacity: 0; }
+      12% { opacity: 1; }
+      to { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
+    }
+    .page { position: relative; z-index: 1; width: min(760px, 92%); margin: 0 auto; padding: 28px 0 42px; }
+    .top-note { text-align: center; color: #a65b87; font-size: .9rem; letter-spacing: .12em; text-transform: uppercase; }
+    .hero {
+      margin-top: 20px;
+      padding: clamp(24px, 6vw, 48px) clamp(18px, 5vw, 42px);
+      text-align: center;
+      background: rgba(255,255,255,.78);
+      border: 2px solid rgba(255,117,167,.28);
+      border-radius: 30px;
+      box-shadow: 0 18px 55px rgba(190, 91, 143, .15);
+      backdrop-filter: blur(8px);
+      animation: popIn .8s ease both;
+    }
+    @keyframes popIn { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .cake { font-size: clamp(3.6rem, 14vw, 6rem); display: inline-block; animation: bounce 2s ease-in-out infinite; filter: drop-shadow(0 8px 8px #ffb2ce); }
+    @keyframes bounce { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-9px) rotate(3deg); } }
+    h1 { margin: 8px 0 10px; color: var(--deep-pink); font-size: clamp(2.1rem, 8vw, 4rem); line-height: 1.05; }
+    .nickname { display: inline-block; margin: 10px 0 18px; padding: 9px 16px; border-radius: 999px; color: #8a4bb0; background: #f3e6ff; font-weight: 800; transform: rotate(-2deg); }
+    .intro { max-width: 540px; margin: 0 auto; font-size: clamp(1rem, 3.7vw, 1.18rem); line-height: 1.8; }
+    .button {
+      display: inline-block; margin-top: 25px; border: 0; border-radius: 999px;
+      padding: 14px 23px; background: linear-gradient(135deg, #ff77a8, #e94991);
+      color: white; font-size: 1rem; font-weight: 800; cursor: pointer;
+      box-shadow: 0 8px 18px rgba(232,62,130,.25); transition: transform .2s, box-shadow .2s;
+    }
+    .button:hover { transform: translateY(-3px); box-shadow: 0 12px 22px rgba(232,62,130,.32); }
+    .letter { margin-top: 22px; padding: 25px clamp(18px, 5vw, 38px); background: #fff; border-radius: 24px; box-shadow: 0 12px 35px rgba(190,91,143,.1); line-height: 1.85; }
+    .letter h2 { margin-top: 0; color: var(--deep-pink); text-align: center; font-size: clamp(1.45rem, 5vw, 2rem); }
+    .letter p { margin: 12px 0; }
+    .highlight { color: #d73b83; font-weight: 800; }
+    .joke {
+      margin: 22px 0; padding: 17px; text-align: center; border-radius: 18px;
+      background: linear-gradient(135deg, #fff0f7, #f5edff); border: 1px dashed #eaa0c5;
+      font-weight: 700;
+    }
+    .wish { margin-top: 22px; padding: 24px 18px; text-align: center; border-radius: 24px; background: linear-gradient(135deg, #ff8bb5, #b48ae8); color: white; box-shadow: 0 12px 30px rgba(169,101,184,.22); }
+    .wish h2 { margin: 0 0 10px; font-size: 1.7rem; }
+    .wish p { margin: 0; line-height: 1.8; }
+    footer { padding: 26px 10px 0; text-align: center; color: #a65b87; font-size: .9rem; line-height: 1.8; }
+    .signature { color: var(--deep-pink); font-weight: 900; }
+    .burst { position: fixed; z-index: 10; pointer-events: none; font-size: 22px; animation: burst 1.5s ease-out forwards; }
+    @keyframes burst { from { transform: translate(0,0) scale(.6) rotate(0); opacity: 1; } to { transform: translate(var(--dx), var(--dy)) scale(1.4) rotate(40deg); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <main class="page">
+    <div class="top-note">✨ Un día especial para alguien especial ✨</div>
+
+    <section class="hero">
+      <div class="cake" aria-hidden="true">🎂</div>
+      <h1>¡Feliz cumpleaños,<br>Sherlyn!</h1>
+      <div class="nickname">💗 Mi Wuirra Cursosa 💗</div>
+      <p class="intro">
+        Hoy cumple años una de mis personas favoritas… aunque a veces la cursilería se le suba a la cabeza. 😂💕
+        ¡Esta página es para usted, prima!
+      </p>
+      <button class="button" id="surpriseBtn">Toca aquí para tu sorpresa 🎁</button>
+    </section>
+
+    <section class="letter" id="message">
+      <h2>Para mi prima favorita 🥹💖</h2>
+      <p>
+        Sherlyn, deseo de corazón que este nuevo año de vida venga cargado de
+        <span class="highlight">alegrías, salud, amor, sueños cumplidos</span>
+        y muchísimas razones para sonreír.
+      </p>
+      <p>
+        Gracias por ser esa prima especial que merece todo lo bonito de este mundo.
+        Nunca pierda esa forma tan suya de ser, porque la hace única… aunque sí podríamos
+        bajarle dos rayitas al nivel de cursilería. 🤣
+      </p>
+      <div class="joke">
+        📢 Comunicado oficial:<br>
+        Hoy se permite ser 300% más cursi de lo normal.<br>
+        ¡Es su cumpleaños y tiene inmunidad! 😂💅
+      </div>
+      <p>
+        Fuera de bromas, quiero que sepa que la quiero muchísimo y que me alegra tenerla
+        como prima. Que nunca le falten motivos para reír, personas que la quieran de verdad
+        y momentos que se conviertan en recuerdos hermosos.
+      </p>
+      <p>
+        Siga brillando, siga siendo usted y nunca deje de soñar, mi
+        <span class="highlight">Wuirra Cursosa</span>. 💗🌷
+      </p>
+    </section>
+
+    <section class="wish">
+      <h2>🎉 ¡Que se cumplan sus deseos! 🎉</h2>
+      <p>Que la vida la sorprenda bonito hoy y siempre.<br>
+      Le mando un abrazo enorme, un montón de cariño y… ¡cero burlas por ser cursi durante 24 horas! 🫶😂</p>
+    </section>
+
+    <footer>
+      Hecho con mucho cariño para<br>
+      <span class="signature">Sherlyn, la inigualable Wuirra Cursosa 💘</span><br>
+      <span>Con cariño, su primo favorito (obviamente 😎)</span>
+    </footer>
+  </main>
+
+  <script>
+    const hearts = document.getElementById('hearts');
+    const heartSymbols = ['💗', '💕', '💖', '♡', '✨', '🌸'];
+    for (let i = 0; i < 22; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.fontSize = (14 + Math.random() * 22) + 'px';
+      heart.style.animationDuration = (8 + Math.random() * 11) + 's';
+      heart.style.animationDelay = (-Math.random() * 18) + 's';
+      hearts.appendChild(heart);
+    }
+
+    document.getElementById('surpriseBtn').addEventListener('click', () => {
+      document.getElementById('message').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const emojis = ['💗', '🎉', '✨', '💕', '🌸', '🎂', '💖'];
+      for (let i = 0; i < 36; i++) {
+        const bit = document.createElement('span');
+        bit.className = 'burst';
+        bit.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        bit.style.left = (10 + Math.random() * 80) + 'vw';
+        bit.style.top = (25 + Math.random() * 50) + 'vh';
+        bit.style.setProperty('--dx', (Math.random() * 240 - 120) + 'px');
+        bit.style.setProperty('--dy', (-80 - Math.random() * 240) + 'px');
+        document.body.appendChild(bit);
+        setTimeout(() => bit.remove(), 1600);
+      }
+    });
+  </script>
+</body>
+</html>
